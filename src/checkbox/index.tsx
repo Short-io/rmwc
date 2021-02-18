@@ -72,6 +72,7 @@ export const Checkbox: RMWC.ComponentType<
     <CheckboxRoot
       {...rootEl.props({
         checked: rest.checked,
+        ripple: rest.ripple,
         indeterminate,
         ...toggleRootProps
       })}
@@ -87,7 +88,7 @@ export const Checkbox: RMWC.ComponentType<
         id={id}
       />
       <CheckboxBackground />
-      <CheckboxRipple />
+      {rest.ripple ? <CheckboxRipple /> : null}
     </CheckboxRoot>
   );
 

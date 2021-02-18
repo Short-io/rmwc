@@ -11,6 +11,7 @@ function CheckboxStory() {
   const [disabled] = useKnob('boolean', 'disabled', false);
   const [value] = useKnob('text', 'value', 'myValue');
   const [label] = useKnob('text', 'label', 'Hello World');
+  const [ ripple ] = useKnob('boolean', 'ripple', true);
 
   return (
     <Checkbox
@@ -18,6 +19,7 @@ function CheckboxStory() {
       checked={checked}
       indeterminate={indeterminate}
       value={value}
+      ripple={ripple}
       foundationRef={(ref) => console.log(ref)}
       onChange={(evt) => {
         setChecked(evt.currentTarget.checked);

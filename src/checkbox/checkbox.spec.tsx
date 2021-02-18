@@ -45,6 +45,11 @@ describe('Checkbox', () => {
     expect(checkbox.text()).toEqual('hello world');
   });
 
+  test('ripple can be disabled', () => {
+    const checkbox = mount(<Checkbox ripple={false} label="hello world" />);
+    expect(checkbox).toMatchSnapshot();
+  });
+
   test('can have custom classnames on input', () => {
     const el = mount(<Checkbox className={'my-custom-classname'} />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
