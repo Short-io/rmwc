@@ -2,7 +2,7 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
@@ -38,7 +38,7 @@ const appLib = paths.appPath;
 const appLibIndex = path.resolve(path.join(paths.appSrc, 'rmwc.js'));
 const appLibBuild = path.resolve(path.join(paths.appPath, 'lib'));
 
-// ExtractTextPlugin expects the build output to be flat.
+// MiniCssExtractPlugin expects the build output to be flat.
 // (See https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/27)
 // However, our output is structured with css, js and media folders.
 // To have this structure working with relative paths, we have to use custom options.
