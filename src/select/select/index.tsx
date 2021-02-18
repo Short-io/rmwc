@@ -1,11 +1,11 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { MDCSelectFoundation } from '@material/select';
-import { useClassNames, useId, Tag, createComponent } from '@rmwc/base';
-import { FloatingLabel } from '@rmwc/floating-label';
-import { LineRipple } from '@rmwc/line-ripple';
+import { useClassNames, useId, Tag, createComponent } from '@srmwc/base';
+import { FloatingLabel } from '@srmwc/floating-label';
+import { LineRipple } from '@srmwc/line-ripple';
 
-import { NotchedOutline } from '@rmwc/notched-outline';
+import { NotchedOutline } from '@srmwc/notched-outline';
 import {
   Menu,
   MenuItem,
@@ -13,9 +13,9 @@ import {
   MenuProps,
   MenuApi,
   MenuOnSelectEventT
-} from '@rmwc/menu';
-import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
-import { withRipple } from '@rmwc/ripple';
+} from '@srmwc/menu';
+import { ListGroup, ListGroupSubheader, ListDivider } from '@srmwc/list';
+import { withRipple } from '@srmwc/ripple';
 
 import { useSelectFoundation } from './foundation';
 import { SelectIcon } from '../select-icon';

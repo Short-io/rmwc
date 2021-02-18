@@ -1,1 +1,1 @@
-import '@rmwc/circular-progress/circular-progress.css';
+import '@srmwc/circular-progress/circular-progress.css';

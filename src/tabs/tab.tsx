@@ -1,4 +1,4 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 
 import { MDCTabFoundation } from '@material/tab';
@@ -8,9 +8,9 @@ import {
   Tag,
   FoundationElement,
   createComponent
-} from '@rmwc/base';
-import { IconProps, Icon } from '@rmwc/icon';
-import { withRipple, RippleSurface } from '@rmwc/ripple';
+} from '@srmwc/base';
+import { IconProps, Icon } from '@srmwc/icon';
+import { withRipple, RippleSurface } from '@srmwc/ripple';
 
 import { TabBarContext } from './tab-bar-context';
 import { TabIndicator } from './tab-indicator';

@@ -13,8 +13,8 @@ import {
   createDialogQueue,
   DialogQueue
 } from './';
-import { useKnob } from '@rmwc/base/utils/use-knob';
-import { Button } from '@rmwc/button';
+import { useKnob } from '@srmwc/base/utils/use-knob';
+import { Button } from '@srmwc/button';
 
 const DialogStory = function () {
   let [open, setOpen] = useKnob('boolean', 'open', true);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MDCLinearProgressFoundation } from '@material/linear-progress';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@srmwc/base';
 import { LinearProgressProps } from '.';
 
 export const useLinearProgressFoundation = (props: LinearProgressProps) => {

@@ -7,7 +7,7 @@ import ReactGA from 'react-ga';
 
 import { AppContainer } from 'react-hot-loader';
 import App from './views/app';
-import { RMWCProvider } from '@rmwc/provider';
+import { RMWCProvider } from '@srmwc/provider';
 
 const renderApp = (Component: React.ComponentType<any>) => {
   ReactDOM.render(

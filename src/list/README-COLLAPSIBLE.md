@@ -2,13 +2,13 @@
 
 Lists are continuous, vertical indexes of text or images.
 
-- Module **@rmwc/list**
+- Module **@srmwc/list**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/list/styles';
+    - import '@srmwc/list/styles';
   - Or include stylesheets
     - **'@material/list/dist/mdc.list.css'**
-    - **'@rmwc/list/collapsible-list.css'**
+    - **'@srmwc/list/collapsible-list.css'**
 
 
 Collapsible lists aren't part of the material spec, but they've been added to RMWC after continuing requests from the community. They present an accordion style navigation element to progressively reveal content. They've have been built to work with the `List` and `ListItem` components in regards to keyboard events and styling, but they technically be used with any kind of content.

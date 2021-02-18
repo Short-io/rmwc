@@ -1,9 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React, { useCallback, useRef, useEffect } from 'react';
 import { MDCMenuFoundation } from '@material/menu';
-import { useFoundation, closest } from '@rmwc/base';
-import { ListApi } from '@rmwc/list';
+import { useFoundation, closest } from '@srmwc/base';
+import { ListApi } from '@srmwc/list';
 import { MenuSurfaceOnOpenEventT, MenuSurfaceApi } from '../menu-surface';
 import { MenuProps } from './';
 

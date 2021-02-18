@@ -2,10 +2,10 @@
 
 Cards contain content and actions about a single subject.
 
-- Module **@rmwc/card**
+- Module **@srmwc/card**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/card/styles';
+    - import '@srmwc/card/styles';
   - Or include stylesheets
     - **'@material/card/dist/mdc.card.css'**
     - **'@material/button/dist/mdc.button.css'**

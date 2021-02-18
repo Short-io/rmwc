@@ -15,8 +15,8 @@ export default function() {
     <Docs
       title="Tooltips"
       lead="Tooltips display informative text when users hover over, focus on, or tap an element."
-      module="@rmwc/tooltip"
-      styles={['@rmwc/tooltip/tooltip.css']}
+      module="@srmwc/tooltip"
+      styles={['@srmwc/tooltip/tooltip.css']}
       examples={examples}
       addon
     >

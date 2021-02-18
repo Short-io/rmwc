@@ -1,9 +1,9 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { MDCRadioFoundation } from '@material/radio';
-import { Tag, useClassNames, mergeRefs, createComponent } from '@rmwc/base';
-import { withRipple } from '@rmwc/ripple';
-import { ToggleableProps, ToggleHTMLProps } from '@rmwc/toggleable';
+import { Tag, useClassNames, mergeRefs, createComponent } from '@srmwc/base';
+import { withRipple } from '@srmwc/ripple';
+import { ToggleableProps, ToggleHTMLProps } from '@srmwc/toggleable';
 import { useRadioFoundation } from './foundation';
 
 /*********************************************************************

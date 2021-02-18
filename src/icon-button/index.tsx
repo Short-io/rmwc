@@ -1,9 +1,9 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
-import { Tag, useClassNames, createComponent } from '@rmwc/base';
-import { Icon, IconProps } from '@rmwc/icon';
-import { withRipple } from '@rmwc/ripple';
+import { Tag, useClassNames, createComponent } from '@srmwc/base';
+import { Icon, IconProps } from '@srmwc/icon';
+import { withRipple } from '@srmwc/ripple';
 import { useIconButtonFoundation } from './foundation';
 
 /*********************************************************************

@@ -1,7 +1,7 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { MDCListFoundation } from '@material/list';
-import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@srmwc/base';
 import { useListFoundation } from './foundation';
 
 export type ListOnActionEventT = RMWC.CustomEventT<{ index: number }>;

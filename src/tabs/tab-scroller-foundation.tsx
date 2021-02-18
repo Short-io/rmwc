@@ -1,6 +1,6 @@
 import React from 'react';
-import { useFoundation, emptyClientRect } from '@rmwc/base';
-import { matches } from '@rmwc/base';
+import { useFoundation, emptyClientRect } from '@srmwc/base';
+import { matches } from '@srmwc/base';
 import {
   MDCTabScrollerFoundation,
   util as scrollerUtil

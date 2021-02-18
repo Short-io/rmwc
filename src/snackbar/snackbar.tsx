@@ -1,11 +1,11 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { MDCSnackbarFoundation } from '@material/snackbar';
-import { Button, ButtonProps } from '@rmwc/button';
-import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import { Button, ButtonProps } from '@srmwc/button';
+import { useClassNames, Tag, createComponent } from '@srmwc/base';
 import { useSnackbarFoundation } from './foundation';
-import { IconButton, IconButtonProps } from '@rmwc/icon-button';
-import { Icon } from '@rmwc/icon';
+import { IconButton, IconButtonProps } from '@srmwc/icon-button';
+import { Icon } from '@srmwc/icon';
 
 /*********************************************************************
  * Events

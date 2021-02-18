@@ -18,7 +18,7 @@ export default function() {
     <Docs
       title="Image Lists"
       lead="MDC Image List provides a RTL-aware Material Design image list component, representing an evolution of the Material Design Grid List spec. An Image List consists of several items, each containing an image and optionally supporting content (i.e. a text label)."
-      module="@rmwc/image-list"
+      module="@srmwc/image-list"
       styles={['@material/image-list/dist/mdc.image-list.css']}
       docsLink="https://material.io/develop/web/components/image-lists/"
       examples={examples}

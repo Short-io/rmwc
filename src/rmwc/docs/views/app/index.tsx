@@ -1,5 +1,5 @@
 // eslint-disable-next-line  @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React, { useEffect, useState } from 'react';
 import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
@@ -15,24 +15,24 @@ import {
   TopAppBarNavigationIcon,
   TopAppBarActionItem,
   TopAppBarFixedAdjust
-} from '@rmwc/top-app-bar';
+} from '@srmwc/top-app-bar';
 
-import { Icon } from '@rmwc/icon';
-import { ThemeProvider } from '@rmwc/theme';
-import { Typography } from '@rmwc/typography';
-import { Ripple } from '@rmwc/ripple';
+import { Icon } from '@srmwc/icon';
+import { ThemeProvider } from '@srmwc/theme';
+import { Typography } from '@srmwc/typography';
+import { Ripple } from '@srmwc/ripple';
 
 import {
   Drawer,
   DrawerContent,
   DrawerAppContent,
   DrawerProps
-} from '@rmwc/drawer';
+} from '@srmwc/drawer';
 
-import { ListItem, CollapsibleList, SimpleListItem, List } from '@rmwc/list';
+import { ListItem, CollapsibleList, SimpleListItem, List } from '@srmwc/list';
 
-import { SimpleMenu, MenuItem } from '@rmwc/menu';
-import { Portal } from '@rmwc/base';
+import { SimpleMenu, MenuItem } from '@srmwc/menu';
+import { Portal } from '@srmwc/base';
 
 import Home from '../home';
 import { SiteSearch } from '../site-search';

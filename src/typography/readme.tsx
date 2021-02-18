@@ -12,7 +12,7 @@ export default function() {
     <Docs
       title="Typography"
       lead="Material Design’s text sizes and styles were developed to balance content density and reading comfort under typical usage conditions."
-      module="@rmwc/typography"
+      module="@srmwc/typography"
       styles={['@material/typography/dist/mdc.typography.css']}
       docsLink="https://material.io/develop/web/components/typography/"
       examples={examples}

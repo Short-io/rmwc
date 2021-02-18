@@ -1,9 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { MDCLinearProgressFoundation } from '@material/linear-progress';
 import { useLinearProgressFoundation } from './foundation';
-import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@srmwc/base';
 
 /** A component to display linear progress. */
 export interface LinearProgressProps {

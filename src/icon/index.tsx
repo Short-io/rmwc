@@ -1,7 +1,7 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
-import { useProviderContext } from '@rmwc/provider';
-import { classNames, Tag, createComponent, getDisplayName } from '@rmwc/base';
+import { useProviderContext } from '@srmwc/provider';
+import { classNames, Tag, createComponent, getDisplayName } from '@srmwc/base';
 
 /** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
 export interface IconProps {

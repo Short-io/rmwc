@@ -6,7 +6,7 @@ import {
   createSnackbarQueue,
   SnackbarQueue
 } from './';
-import { wait } from '@rmwc/base/utils/test-utils';
+import { wait } from '@srmwc/base/utils/test-utils';
 
 describe('Snackbar', () => {
   it('renders', (done) => {

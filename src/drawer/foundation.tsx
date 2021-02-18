@@ -8,7 +8,7 @@ import {
   FocusTrap,
   focusTrapFactory,
   triggerWindowResize
-} from '@rmwc/base';
+} from '@srmwc/base';
 import React, { useRef, useEffect, useCallback } from 'react';
 
 const useDrawerFoundationFactory = (

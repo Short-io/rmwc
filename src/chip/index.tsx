@@ -1,10 +1,10 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { MDCChipFoundation } from '@material/chips';
-import { withRipple } from '@rmwc/ripple';
-import { Icon, IconProps } from '@rmwc/icon';
+import { withRipple } from '@srmwc/ripple';
+import { Icon, IconProps } from '@srmwc/icon';
 import { useChipFoundation } from './foundation';
-import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@srmwc/base';
 
 /*********************************************************************
  * Events

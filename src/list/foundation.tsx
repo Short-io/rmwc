@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { MDCListFoundation, MDCListAdapter } from '@material/list';
-import { matches, FoundationElement } from '@rmwc/base';
-import { useFoundation } from '@rmwc/base';
+import { matches, FoundationElement } from '@srmwc/base';
+import { useFoundation } from '@srmwc/base';
 import { ListProps, ListApi } from './list';
 
 export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {

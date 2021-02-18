@@ -1,9 +1,9 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 
-import { classNames, useClassNames, Tag, createComponent } from '@rmwc/base';
-import { withRipple } from '@rmwc/ripple';
-import { Icon, IconProps } from '@rmwc/icon';
+import { classNames, useClassNames, Tag, createComponent } from '@srmwc/base';
+import { withRipple } from '@srmwc/ripple';
+import { Icon, IconProps } from '@srmwc/icon';
 
 /** A ListItem component. */
 export interface ListItemProps extends RMWC.WithRippleProps {

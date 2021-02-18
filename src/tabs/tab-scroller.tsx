@@ -1,7 +1,7 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 
-import { Tag } from '@rmwc/base';
+import { Tag } from '@srmwc/base';
 import { useTabScrollerFoundation } from './tab-scroller-foundation';
 
 export interface TabScrollerProps {

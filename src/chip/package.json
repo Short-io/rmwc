@@ -1,5 +1,5 @@
 {
-  "name": "@rmwc/chip",
+  "name": "@srmwc/chip",
   "version": "6.1.4",
   "description": "RMWC Chip component",
   "main": "dist/index.js",
@@ -37,10 +37,10 @@
   },
   "dependencies": {
     "@material/chips": "^5.1.0",
-    "@rmwc/base": "^6.1.4",
-    "@rmwc/icon": "^6.1.4",
-    "@rmwc/ripple": "^6.1.4",
-    "@rmwc/types": "^6.0.5"
+    "@srmwc/base": "^6.1.4",
+    "@srmwc/icon": "^6.1.4",
+    "@srmwc/ripple": "^6.1.4",
+    "@srmwc/types": "^6.0.5"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

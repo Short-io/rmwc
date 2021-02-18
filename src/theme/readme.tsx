@@ -14,8 +14,8 @@ export default function() {
     <Docs
       title="Theming"
       lead="MDC Theme is a foundational module that themes MDC Web components."
-      module="@rmwc/theme"
-      styles={['@material/theme/dist/mdc.theme.css', '@rmwc/theme/theme.css']}
+      module="@srmwc/theme"
+      styles={['@material/theme/dist/mdc.theme.css', '@srmwc/theme/theme.css']}
       docsLink="https://material.io/develop/web/components/theme/"
       examples={examples}
     >

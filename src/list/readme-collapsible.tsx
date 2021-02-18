@@ -12,10 +12,10 @@ export default function() {
     <Docs
       title="Collapsible Lists"
       lead="Lists are continuous, vertical indexes of text or images."
-      module="@rmwc/list"
+      module="@srmwc/list"
       styles={[
         '@material/list/dist/mdc.list.css',
-        '@rmwc/list/collapsible-list.css'
+        '@srmwc/list/collapsible-list.css'
       ]}
       examples={examples}
       addon

@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import { ChipProps, ChipHTMLProps } from './';
-import { useId, emptyClientRect } from '@rmwc/base';
-import { useFoundation } from '@rmwc/base';
+import { useId, emptyClientRect } from '@srmwc/base';
+import { useFoundation } from '@srmwc/base';
 import { MDCChipFoundation, MDCChipAdapter } from '@material/chips';
 import { EventSource } from '@material/chips/chip/constants';
 import React, { useEffect, useCallback } from 'react';

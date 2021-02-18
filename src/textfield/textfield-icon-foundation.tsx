@@ -1,6 +1,6 @@
 import React from 'react';
-import { useFoundation } from '@rmwc/base';
-import { IconProps } from '@rmwc/icon';
+import { useFoundation } from '@srmwc/base';
+import { IconProps } from '@srmwc/icon';
 import { EventType, SpecificEventListener } from '@material/base/types';
 
 import { MDCTextFieldIconFoundation } from '@material/textfield';

@@ -11,7 +11,7 @@ export default function() {
     <Docs
       title="Elevation"
       lead="Elevation is the relative distance between two surfaces along the z-axis."
-      module="@rmwc/elevation"
+      module="@srmwc/elevation"
       styles={['@material/elevation/dist/mdc.elevation.css']}
       docsLink="https://material.io/develop/web/components/elevation/"
       examples={examples}

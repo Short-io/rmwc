@@ -21,7 +21,7 @@ export default function() {
     <Docs
       title="Dialogs"
       lead="Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks."
-      module="@rmwc/dialog"
+      module="@srmwc/dialog"
       styles={[
         '@material/dialog/dist/mdc.dialog.css',
         '@material/button/dist/mdc.button.css',
@@ -111,7 +111,7 @@ export default function() {
         {/* jsx */ `
         // Create a file that exports your queue
         // myQueue.js
-        import { createDialogQueue } from '@rmwc/dialog';
+        import { createDialogQueue } from '@srmwc/dialog';
 
         export const queue = createDialogQueue();
       `}
@@ -243,7 +243,7 @@ export default function() {
           // Render the RMWC Portal
           // You only have to do this once
           import React from 'react';
-          import { Portal } from '@rmwc/base';
+          import { Portal } from '@srmwc/base';
 
           export default function App() {
             return (

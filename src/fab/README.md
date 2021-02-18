@@ -2,13 +2,13 @@
 
 A floating action button (FAB) represents the primary action of a screen.
 
-- Module **@rmwc/fab**
+- Module **@srmwc/fab**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/fab/styles';
+    - import '@srmwc/fab/styles';
   - Or include stylesheets
     - **'@material/fab/dist/mdc.fab.css'**
-    - **'@rmwc/icon/icon.css'**
+    - **'@srmwc/icon/icon.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/buttons/floating-action-buttons/](https://material.io/develop/web/components/buttons/floating-action-buttons/)
 

@@ -1,4 +1,4 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React, { useContext } from 'react';
 import { MDCCheckboxFoundation } from '@material/checkbox';
 import {
@@ -8,9 +8,9 @@ import {
   createComponent,
   DataTableContext,
   DataTableHeadContext
-} from '@rmwc/base';
-import { withRipple } from '@rmwc/ripple';
-import { ToggleableProps, ToggleHTMLProps } from '@rmwc/toggleable';
+} from '@srmwc/base';
+import { withRipple } from '@srmwc/ripple';
+import { ToggleableProps, ToggleHTMLProps } from '@srmwc/toggleable';
 import { useCheckboxFoundation } from './foundation';
 
 /*********************************************************************

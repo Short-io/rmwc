@@ -57,7 +57,7 @@ const addAliases = config => {
   config.resolve.alias = {
     ...(config.resolve.alias || {}),
     rmwc: path.resolve(root, 'src'),
-    '@rmwc': path.resolve(root, 'src'),
+    '@srmwc': path.resolve(root, 'src'),
     '@doc-utils': path.resolve(root, 'src', 'doc-utils')
   };
 
@@ -78,7 +78,7 @@ const enableHotReload = config => {
 const jestModuleNameMapper = config => {
   config.moduleNameMapper = {
     ...config.moduleNameMapper,
-    '@rmwc/(.*)$': '<rootDir>/src/$1'
+    '@srmwc/(.*)$': '<rootDir>/src/$1'
   };
   return config;
 };

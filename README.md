@@ -1,16 +1,14 @@
 [![tests](https://img.shields.io/github/workflow/status/jamesmfriedman/rmwc/RMWC%20Unit%20Tests)](https://github.com/jamesmfriedman/rmwc/)
 [![codecov](https://codecov.io/gh/jamesmfriedman/rmwc/branch/master/graph/badge.svg)](https://codecov.io/gh/jamesmfriedman/rmwc)
 [![npm](https://img.shields.io/npm/v/rmwc.svg)](https://www.npmjs.com/package/rmwc)
-[![npm](https://img.shields.io/npm/dm/@rmwc/base.svg)](https://www.npmjs.com/package/rmwc)
+[![npm](https://img.shields.io/npm/dm/@srmwc/base.svg)](https://www.npmjs.com/package/rmwc)
 [![npm](https://img.shields.io/npm/l/rmwc.svg)](https://github.com/jamesmfriedman/rmwc/blob/master/LICENSE)
 [![Chat](https://img.shields.io/discord/490680848979591168.svg)](https://discord.gg/4BSUxCW)
 [![Backers on Open Collective](https://opencollective.com/rmwc/backers/badge.svg)](#backers) 
 [![Sponsors on Open Collective](https://opencollective.com/rmwc/sponsors/badge.svg)](#sponsors) 
 
 
-# RMWC - React Material Web Components
-
-💥 Attention: This project is currently receiving limited support. Issues may not be responded too. If you're interested in helping with maintenance and becoming a contributor or maintainer, please message me.
+# SRMWC - Short.io for of RMWC, React Material Web Components
 
 RMWC is a React UI Kit built on Google's official Material Components Web library v5.x.x
 [https://rmwc.io/](https://rmwc.io/)
@@ -36,7 +34,7 @@ Features:
 v6.0.0 is here! Check out the migration guide https://opencollective.com/rmwc/updates/6-0-0-the-hooks-edition
 
 TL;DR
-- `npm i rmwc@latest` or `npm i @rmwc/button@latest`.
+- `npm i rmwc@latest` or `npm i @srmwc/button@latest`.
 - Embracing React Hooks
 - New components, and latest updates from Google.
 
@@ -80,7 +78,7 @@ Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology
 
 ## To run the docs / contribute
 
-* `git clone https://github.com/jamesmfriedman/rmwc.git`
+* `git clone https://github.com/Short.io/srmwc.git`
 * `cd rmwc`
 * `npm install`
 * `npm start`

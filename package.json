@@ -1,10 +1,10 @@
 {
-  "name": "rmwc-main",
+  "name": "srmwc-main",
   "author": "James Friedman",
   "version": "6.1.1",
   "private": true,
   "homepage": "https://rmwc.io",
-  "description": "RMWC is a React UI Kit built on Google's official Material Components Web library.",
+  "description": "SRMWC is a React UI Kit built on Google's official Material Components Web library.",
   "license": "MIT",
   "sideEffects": true,
   "main": "index.js",
@@ -17,7 +17,7 @@
   "scripts": {
     "install": "lerna bootstrap --force-local --hoist",
     "start": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired start",
-    "build:docsite": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired build && rm -R -f docs && mv build docs",
+    "build:docsite": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired build && rimraf docs && mv build docs",
     "build:docs": "npm run clean && npm run docgen && npm run build:docsite",
     "build:code": "npm run clean && node scripts/build-code.js",
     "build:lib": "node scripts/build-lib.js",

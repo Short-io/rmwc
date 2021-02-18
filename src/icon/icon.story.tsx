@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { Icon } from './';
-import { RMWCProvider } from '@rmwc/provider';
+import { RMWCProvider } from '@srmwc/provider';
 
 storiesOf('Icons', module).add('Icon', () => (
   <ul>

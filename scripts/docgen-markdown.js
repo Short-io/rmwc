@@ -3,7 +3,7 @@ const { renderToStaticMarkup } = require('react-dom/server');
 const path = require('path');
 const root = path.resolve(__dirname, '../');
 const moduleAlias = require('module-alias');
-moduleAlias.addAlias('@rmwc', root + '/build/dist');
+moduleAlias.addAlias('@srmwc', root + '/build/dist');
 moduleAlias.addAlias('@doc-utils', root + '/build/dist/doc-utils-markdown');
 
 const { execSync } = require('child_process');

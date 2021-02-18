@@ -17,8 +17,8 @@ Before you can customize the components, you need to include the base stylesheet
 
 ```jsx
 /** Simplified ES6 imports for people using URL Loaders */
-import '@rmwc/button/dist/styles';
-import '@rmwc/avatar/dist/styles';
+import '@srmwc/button/dist/styles';
+import '@srmwc/avatar/dist/styles';
 ```
 
 **Warning** If you're using this method with tree shaking turned on, make sure to include css in your package.json sideEffects. `"sideEffects": [ "*.css" ]` https://github.com/jamesmfriedman/rmwc/issues/545
@@ -26,13 +26,13 @@ import '@rmwc/avatar/dist/styles';
 ```jsx
 /** Importing individual stylesheets */
 import '@material/button/dist/mdc.button.css';
-import '@rmwc/icon/icon.css';
+import '@srmwc/icon/icon.css';
 ```
 
 ```html
 <!-- Placing in the head of your HTML file -->
 <link rel="stylesheet" type="text/css" href="node_modules/@material/button/dist/mdc.button.css">;
-<link rel="stylesheet" type="text/css" href="node_modules/@rmwc/icon/icon.css">;
+<link rel="stylesheet" type="text/css" href="node_modules/@srmwc/icon/icon.css">;
 ```
 
 ## Using Standard CSS
@@ -41,7 +41,7 @@ All of the components have the `material-components-web` classNames on them and 
 
 ```jsx
 /** in your JSX */
-import { Button } from '@rmwc/button';
+import { Button } from '@srmwc/button';
 
 const MyComponent = props => (
   <Button className="my-custom-classname">Hello World</Button>
@@ -65,7 +65,7 @@ Just add your className. If you need to target a node that is not directly expos
 
 ```jsx
 /** in your JSX */
-import { DrawerHeader } from '@rmwc/drawer';
+import { DrawerHeader } from '@srmwc/drawer';
 import styles from './my-style-sheet.css';
 
 const MyComponent = props => (
@@ -88,7 +88,7 @@ Using RMWC with `styled-components` is a breeze. For most use cases the followin
 
 ```jsx
 import styled from 'styled-components';
-import { Button } from '@rmwc/button';
+import { Button } from '@srmwc/button';
 
 const StyledButton = styled(Button)`
   // Your Styles Here.
@@ -101,7 +101,7 @@ You will eventually want some condition styles based on props passed into the co
 
 ```jsx
 import styled, { css } from 'styled-components';
-import { Button } from '@rmwc/button';
+import { Button } from '@srmwc/button';
 
 const StyledButton = styled(({ isFullWidth, ...otherProps }) => (
   <Button {...otherProps} />
@@ -131,7 +131,7 @@ You can take this to the next level with `Select` with the following code.
 
 ```jsx
 import styled from 'styled-components';
-import { Select } from '@rmwc/select';
+import { Select } from '@srmwc/select';
 
 const StyledSelect = styled(({ label, ...otherProps }) => (
   <Select
@@ -153,8 +153,8 @@ Lets say you want an icon in `Select` just like you can have it on `TextField`.
 
 ```jsx
 import styled, { css } from 'styled-components';
-import { TextFieldIcon } from '@rmwc/textField';
-import { Select } from '@rmwc/select';
+import { TextFieldIcon } from '@srmwc/textField';
+import { Select } from '@srmwc/select';
 
 const BaseSelect = styled(({ label, ...otherProps }) => (
   <Select label={label} />

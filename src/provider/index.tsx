@@ -1,5 +1,5 @@
 import React from 'react';
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 
 // prettier-ignore
 // eslint-disable-next-line max-len

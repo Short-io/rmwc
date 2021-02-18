@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Checkbox } from './';
-import { useKnob } from '@rmwc/base/utils/use-knob';
+import { useKnob } from '@srmwc/base/utils/use-knob';
 
 function CheckboxStory() {
   const [checked, setChecked] = useKnob('boolean', 'checked', false);

@@ -13,8 +13,8 @@ export default function () {
     <Docs
       title="Icons"
       lead="Material icons use geometric shapes to visually represent core ideas, capabilities, or topics."
-      module="@rmwc/icon"
-      styles={['@rmwc/icon/icon.css']}
+      module="@srmwc/icon"
+      styles={['@srmwc/icon/icon.css']}
       docsLink="https://material.io/icons"
       examples={examples}
     >
@@ -247,13 +247,13 @@ export default function () {
         {
           /* jsx */ `
           // 1) Your app has an icon component you use
-          import { MyIconComponent } from '@rmwc/icon';
+          import { MyIconComponent } from '@srmwc/icon';
           <MyIconComponent name="search" />
 
           // 2) Now you are using RMWC, lots of components are instances of Icons
           // You need to be able to delegate the handling of an icon prop to your own component
-          import { TextField } from '@rmwc/textField';
-          import { Chip } from '@rmwc/chip';
+          import { TextField } from '@srmwc/textField';
+          import { Chip } from '@srmwc/chip';
           <TextField icon="favorite" />
           <Chip icon="favorite" />
 
@@ -262,8 +262,8 @@ export default function () {
           import React from 'react';
           import * as ReactDOM from 'react-dom';
           import App from './App'; // your main app component
-          import { RMWCProvider } from '@rmwc/provider';
-          import { MyIconComponent } from '@rmwc/icon';
+          import { RMWCProvider } from '@srmwc/provider';
+          import { MyIconComponent } from '@srmwc/icon';
 
           const iconRenderHandler = ({ content, className, ...rest }) => {
             // content is whatever was passed to the icon prop
@@ -285,7 +285,7 @@ export default function () {
 
           // 4) Now anywhere in your app that an Icon instance is used, it will be
           // delegated to your handler and render your custom component
-          import { TextFieldIcon } from '@rmwc/textfield';
+          import { TextFieldIcon } from '@srmwc/textfield';
           <TextFieldIcon icon="search" />
         `
         }

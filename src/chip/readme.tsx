@@ -11,10 +11,10 @@ export default function() {
     <Docs
       title="Chips"
       lead="Chips represent complex entities in small blocks, such as a contact."
-      module="@rmwc/chip"
+      module="@srmwc/chip"
       styles={[
         '@material/chips/dist/mdc.chips.css',
-        '@rmwc/icon/icon.css',
+        '@srmwc/icon/icon.css',
         '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/chips/"

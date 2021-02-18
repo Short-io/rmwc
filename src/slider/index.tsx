@@ -1,7 +1,7 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { MDCSliderFoundation } from '@material/slider';
-import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import { useClassNames, Tag, createComponent } from '@srmwc/base';
 import { useSliderFoundation } from './foundation';
 
 export type SliderOnChangeEventT = RMWC.CustomEventT<{

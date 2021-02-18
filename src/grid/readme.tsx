@@ -11,7 +11,7 @@ export default function() {
     <Docs
       title="Layout Grid"
       lead="Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone."
-      module="@rmwc/grid"
+      module="@srmwc/grid"
       styles={['@material/layout-grid/dist/mdc.layout-grid.css']}
       docsLink="https://material.io/develop/web/components/layout-grid/"
       examples={examples}

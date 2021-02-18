@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, object, array } from '@storybook/addon-knobs';
 import { Select } from './';
-import { useKnob } from '@rmwc/base/utils/use-knob';
-import { MenuItems, MenuItem } from '@rmwc/menu';
-import { Portal } from '@rmwc/base';
+import { useKnob } from '@srmwc/base/utils/use-knob';
+import { MenuItems, MenuItem } from '@srmwc/menu';
+import { Portal } from '@srmwc/base';
 
 function MutatingSelect(props: any) {
   const [value, setValue] = useKnob('text', 'value', 'Cookies');

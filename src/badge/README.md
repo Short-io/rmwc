@@ -2,12 +2,12 @@
 
 Badges are small status descriptors for UI elements. A badge consists of a small circle, typically containing a number or other short set of characters, that appears in proximity to another object.
 
-- Module **@rmwc/badge**
+- Module **@srmwc/badge**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/badge/styles';
+    - import '@srmwc/badge/styles';
   - Or include stylesheets
-    - **'@rmwc/badge/badge.css'**
+    - **'@srmwc/badge/badge.css'**
 
 
 ```jsx

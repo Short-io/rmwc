@@ -1,9 +1,9 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import { MDCRippleFoundation } from '@material/ripple';
-import { classNames } from '@rmwc/base';
-import { useProviderContext } from '@rmwc/provider';
+import { classNames } from '@srmwc/base';
+import { useProviderContext } from '@srmwc/provider';
 import { useRippleFoundation } from './foundation';
 
 export interface RippleSurfaceProps {

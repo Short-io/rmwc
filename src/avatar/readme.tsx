@@ -14,10 +14,10 @@ export default function() {
     <Docs
       title="Avatars"
       lead="Avatars are virtual representations of users in a system."
-      module="@rmwc/avatar"
+      module="@srmwc/avatar"
       styles={[
-        '@rmwc/avatar/avatar.css',
-        '@rmwc/icon/icon.css',
+        '@srmwc/avatar/avatar.css',
+        '@srmwc/icon/icon.css',
         '@material/ripple/dist/mdc.ripple.css'
       ]}
       examples={examples}

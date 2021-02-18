@@ -1,14 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React, { useContext } from 'react';
-import { Icon } from '@rmwc/icon';
+import { Icon } from '@srmwc/icon';
 import {
   useClassNames,
   Tag,
   createComponent,
   DataTableHeadContext,
   DataTableContext
-} from '@rmwc/base';
+} from '@srmwc/base';
 
 interface SharedDataTableCellProps {
   /** Changes alignment for numeric columns */

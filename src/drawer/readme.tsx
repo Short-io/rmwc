@@ -22,7 +22,7 @@ export default function() {
     <Docs
       title="Drawers"
       lead="A navigation drawer slides in from the left and contains the navigation destinations for your app."
-      module="@rmwc/drawer"
+      module="@srmwc/drawer"
       styles={['@material/drawer/dist/mdc.drawer.css']}
       docsLink="https://material.io/develop/web/components/drawers/"
       examples={examples}

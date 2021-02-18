@@ -1,1 +1,1 @@
-import '@rmwc/tooltip/tooltip.css';
+import '@srmwc/tooltip/tooltip.css';

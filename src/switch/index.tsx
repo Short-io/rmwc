@@ -1,4 +1,4 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { MDCSwitchFoundation } from '@material/switch';
 import {
@@ -7,9 +7,9 @@ import {
   Tag,
   useClassNames,
   createComponent
-} from '@rmwc/base';
-import { withRipple } from '@rmwc/ripple';
-import { ToggleableProps, ToggleHTMLProps } from '@rmwc/toggleable';
+} from '@srmwc/base';
+import { withRipple } from '@srmwc/ripple';
+import { ToggleableProps, ToggleHTMLProps } from '@srmwc/toggleable';
 import { useSwitchFoundation } from './foundation';
 
 /*********************************************************************

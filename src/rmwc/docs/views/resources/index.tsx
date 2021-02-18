@@ -7,11 +7,11 @@ import {
   CardActionButton,
   CardActions,
   CardActionButtons
-} from '@rmwc/card';
+} from '@srmwc/card';
 
-import { Icon } from '@rmwc/icon';
+import { Icon } from '@srmwc/icon';
 
-import { Typography } from '@rmwc/typography';
+import { Typography } from '@srmwc/typography';
 
 import styles from './resources.module.css';
 

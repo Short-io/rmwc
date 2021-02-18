@@ -1,7 +1,7 @@
 import React from 'react';
 import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCFormFieldFoundation } from '@material/form-field';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@srmwc/base';
 import { FormFieldProps } from '.';
 
 export const useFormfieldFoundation = (

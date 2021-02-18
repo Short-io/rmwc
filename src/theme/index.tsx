@@ -1,4 +1,4 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React, { useMemo } from 'react';
 
 import {
@@ -8,7 +8,7 @@ import {
   createComponent,
   Tag,
   useClassNames
-} from '@rmwc/base';
+} from '@srmwc/base';
 
 import { getAutoColorsForTheme } from './utils';
 

@@ -11,7 +11,7 @@ import {
   createDialogQueue,
   DialogQueue
 } from './';
-import { wait, actWait } from '@rmwc/base/utils/test-utils';
+import { wait, actWait } from '@srmwc/base/utils/test-utils';
 import { act } from 'react-dom/test-utils';
 
 describe('Dialog', () => {

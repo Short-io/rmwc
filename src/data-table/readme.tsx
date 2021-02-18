@@ -24,11 +24,11 @@ export default function() {
     <Docs
       title="Data Tables"
       lead="Data tables display sets of data."
-      module="@rmwc/data-table"
+      module="@srmwc/data-table"
       styles={[
         '@material/data-table/dist/mdc.data-table.css',
-        '@rmwc/data-table/data-table.css',
-        '@rmwc/icon/icon.css'
+        '@srmwc/data-table/data-table.css',
+        '@srmwc/icon/icon.css'
       ]}
       examples={examples}
     >

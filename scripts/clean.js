@@ -1,11 +1,11 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 const glob = require('glob');
-const { execSync } = require('child_process');
+const rimraf = require('rimraf');
 
-execSync('rm -R -f ./build');
+rimraf.sync('./build');
 
-const removeFileOrDir = f => execSync(`rm -R -f ${f}`);
+const removeFileOrDir = f => rimraf.sync(f);
 
 glob('./src/*/dist/', { ignore: 'node_modules' }, function(er, files) {
   files.forEach(removeFileOrDir);

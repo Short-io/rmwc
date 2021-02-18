@@ -4,7 +4,7 @@
 
 **Required steps**
 * Preferred: Install **INDIVIDUAL** components
-  * `npm i @rmwc/button --save` or `yarn add @rmwc/button`
+  * `npm i @srmwc/button --save` or `yarn add @srmwc/button`
   * Include the individual components stylesheets (listed on their docs page) in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.).   
 * OR Install **ALL** of RMWC: This is not recommended for production apps!
   * `npm i rmwc --save` or `yarn add rmwc`
@@ -26,7 +26,7 @@
 
 ```jsx
 // Hello World
-import { Button } from '@rmwc/button';
+import { Button } from '@srmwc/button';
 import '@material/button/dist/mdc.button.css';
 
 const MyComponent = props => <Button>Hello World</Button>;
@@ -45,7 +45,7 @@ If you decide to go for the convenience to install the entire RMWC library, your
 
 ```jsx
 /** GOOD example, only the `Button` component will be imported. This supports tree shaking. */
-import { Button } from '@rmwc/button';
+import { Button } from '@srmwc/button';
 ```
 
 This is for the laziest of lazy, all components are re-exported from the root module if you choose to reference them this way.
@@ -139,7 +139,7 @@ Jest uses JSDOM by default which is a browser-like environment. If you are using
 // src/setupTests.js
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import rmwcTestPolyfill from '@rmwc/base/dist/test-polyfill';
+import rmwcTestPolyfill from '@srmwc/base/dist/test-polyfill';
 Enzyme.configure({ adapter: new Adapter() });
 
 //import and run this to fix the the MDC errors

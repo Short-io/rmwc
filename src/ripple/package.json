@@ -1,5 +1,5 @@
 {
-  "name": "@rmwc/ripple",
+  "name": "@srmwc/ripple",
   "version": "6.1.4",
   "description": "RMWC Ripple component",
   "main": "dist/index.js",
@@ -37,9 +37,9 @@
   },
   "dependencies": {
     "@material/ripple": "^5.1.0",
-    "@rmwc/base": "^6.1.4",
-    "@rmwc/provider": "^6.1.4",
-    "@rmwc/types": "^6.0.5"
+    "@srmwc/base": "^6.1.4",
+    "@srmwc/provider": "^6.1.4",
+    "@srmwc/types": "^6.0.5"
   },
   "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
 }

@@ -1,9 +1,9 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { Corner, MDCMenuSurfaceFoundation } from '@material/menu-surface';
-import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import { useClassNames, Tag, createComponent } from '@srmwc/base';
 import { useMenuSurfaceFoundation } from './foundation';
-import { PortalChild, PortalPropT } from '@rmwc/base';
+import { PortalChild, PortalPropT } from '@srmwc/base';
 
 export type AnchorT =
   | 'bottomEnd'

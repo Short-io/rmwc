@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { version } from '../../../package.json';
-import { Typography } from '@rmwc/typography';
+import { Typography } from '@srmwc/typography';
 
-import { Card, CardMedia } from '@rmwc/card';
-import { Grid, GridCell } from '@rmwc/grid';
-import { Theme } from '@rmwc/theme';
-import { Icon } from '@rmwc/icon';
+import { Card, CardMedia } from '@srmwc/card';
+import { Grid, GridCell } from '@srmwc/grid';
+import { Theme } from '@srmwc/theme';
+import { Icon } from '@srmwc/icon';
 
 import styles from './home.module.css';
-import { Button } from '@rmwc/button';
+import { Button } from '@srmwc/button';
 
 import { galleryContent } from '../../common/menu-content';
 

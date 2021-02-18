@@ -348,7 +348,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/textfield/node_modules/@rmwc/types/index.tsx",
+          "fileName": "src/textfield/node_modules/@srmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -574,7 +574,7 @@
             "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
             "metadata": {}
           },
-          "fileName": "src/textfield/node_modules/@rmwc/icon/index.tsx",
+          "fileName": "src/textfield/node_modules/@srmwc/icon/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -785,7 +785,7 @@
             "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
             "metadata": {}
           },
-          "fileName": "src/textfield/node_modules/@rmwc/icon/index.tsx",
+          "fileName": "src/textfield/node_modules/@srmwc/icon/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,

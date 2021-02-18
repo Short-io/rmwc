@@ -11,14 +11,14 @@ export default function() {
     <Docs
       title="Text Fields"
       lead="Text fields allow users to input, edit, and select text."
-      module="@rmwc/textfield"
+      module="@srmwc/textfield"
       styles={[
         '@material/textfield/dist/mdc.textfield.css',
         '@material/floating-label/dist/mdc.floating-label.css',
         '@material/notched-outline/dist/mdc.notched-outline.css',
         '@material/line-ripple/dist/mdc.line-ripple.css',
         '@material/ripple/dist/mdc.ripple.css',
-        '@rmwc/icon/icon.css'
+        '@srmwc/icon/icon.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/text-field/"
       examples={examples}

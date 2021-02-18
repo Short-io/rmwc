@@ -11,7 +11,7 @@ export default function () {
     <Docs
       title="Provider"
       lead="A component that provides global configuration for RMWC."
-      module="@rmwc/provider"
+      module="@srmwc/provider"
       styles={[]}
       examples={examples}
     >
@@ -26,7 +26,7 @@ export default function () {
           import React from 'react';
           import * as ReactDOM from 'react-dom';
           import App from './App'; // your main app component
-          import { RMWCProvider } from '@rmwc/provider';
+          import { RMWCProvider } from '@srmwc/provider';
 
           // This example disables ripples globally by default
           ReactDOM.render(

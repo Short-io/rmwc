@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React, { useState, useEffect } from 'react';
 import {
   SimpleDialog,
@@ -7,8 +7,8 @@ import {
   SimpleDialogHTMLProps,
   DialogOnCloseEventT
 } from './dialog';
-import { ArrayEmitter, randomId } from '@rmwc/base';
-import { TextField, TextFieldProps, TextFieldHTMLProps } from '@rmwc/textfield';
+import { ArrayEmitter, randomId } from '@srmwc/base';
+import { TextField, TextFieldProps, TextFieldHTMLProps } from '@srmwc/textfield';
 
 export interface DialogQueueInput
   extends SimpleDialogProps,

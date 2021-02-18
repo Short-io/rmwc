@@ -6,7 +6,7 @@ import {
   FocusTrap,
   focusTrapFactory,
   triggerWindowResize
-} from '@rmwc/base';
+} from '@srmwc/base';
 import { DialogProps } from '.';
 import React, { useRef, useEffect, useMemo } from 'react';
 

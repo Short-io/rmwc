@@ -11,7 +11,7 @@ export default function() {
     <Docs
       title="Form Fields"
       lead="MDC Form Field provides an mdc-formfield helper class for easily making theme-aware, RTL-aware form field + label combos. It also provides an MDCFormField class for easily making input ripples respond to label events."
-      module="@rmwc/formfield"
+      module="@srmwc/formfield"
       styles={['@material/form-field/dist/mdc.form-field.css']}
       docsLink="https://material.io/develop/web/components/input-controls/form-fields/"
       examples={examples}

@@ -11,10 +11,10 @@ export default function() {
     <Docs
       title="Fabs"
       lead="A floating action button (FAB) represents the primary action of a screen."
-      module="@rmwc/fab"
+      module="@srmwc/fab"
       styles={[
         '@material/fab/dist/mdc.fab.css',
-        '@rmwc/icon/icon.css',
+        '@srmwc/icon/icon.css',
         '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/buttons/floating-action-buttons/"

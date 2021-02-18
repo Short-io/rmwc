@@ -7,7 +7,7 @@
 Components should be imported from their relevant module.
 
 ```jsx
-import { Button } from '@rmwc/button';
+import { Button } from '@srmwc/button';
 
 const MyComponent = props => <Button>Hello World</Button>;
 ```
@@ -21,7 +21,7 @@ All components in RMWC are generated from a common factory method. This gives th
 material-components-web implements right-to-left support for eastern languages. You can pass this prop to any component, please read [material-components-web rtl docs](https://material.io/components/web/catalog/rtl/) for more information.
 
 ```jsx
-import { Drawer, DrawerContent } from '@rmwc/drawer';
+import { Drawer, DrawerContent } from '@srmwc/drawer';
 
 <Drawer dir="rtl">
   <DrawerContent />
@@ -33,8 +33,8 @@ import { Drawer, DrawerContent } from '@rmwc/drawer';
 You can use the `tag` prop to specify the DOM element you would like to render. For advanced cases, you can actually pass a Component to render.
 
 ```jsx
-import { Typography } from '@rmwc/typography';
-import { Button } from '@rmwc/button';
+import { Typography } from '@srmwc/typography';
+import { Button } from '@srmwc/button';
 import { Link } from 'react-router-dom';
 
 // renders an h1
@@ -64,7 +64,7 @@ const Example3 = props => (
 The theming functionality from material-components-web is baked into every component. It works identically to the [`Theme` component's `use` prop](theme).
 
 ```jsx
-import { Button } from '@rmwc/button';
+import { Button } from '@srmwc/button';
 
 <Button raised theme={['secondaryBg',  'onSecondary']}>
   With Theme
@@ -76,7 +76,7 @@ import { Button } from '@rmwc/button';
 With the advent of ref forwarding in React 16.3, you can pass the `ref` prop to the majority of components to get access to their DomNodes. This currently only works on Stateless components like Elevation, Typography, and Grid.,
 
 ```jsx
-import { Elevation } from '@rmwc/elevation';
+import { Elevation } from '@srmwc/elevation';
 
 // renders an h1
 

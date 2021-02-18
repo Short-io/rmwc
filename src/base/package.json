@@ -1,5 +1,5 @@
 {
-  "name": "@rmwc/base",
+  "name": "@srmwc/base",
   "version": "6.1.4",
   "description": "RMWC base module",
   "main": "dist/index.js",
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@material/dom": "^5.1.0",
-    "@rmwc/types": "^6.0.5",
+    "@srmwc/types": "^6.0.5",
     "@types/classnames": "^2.2.7",
     "classnames": "^2.2.6",
     "hyperform": "^0.11.0",

@@ -24,13 +24,13 @@ export default function() {
     <Docs
       title="Menus"
       lead="Menus display a list of choices on a transient sheet of material."
-      module="@rmwc/menu"
+      module="@srmwc/menu"
       styles={[
         '@material/menu/dist/mdc.menu.css',
         '@material/menu-surface/dist/mdc.menu-surface.css',
         '@material/ripple/dist/mdc.ripple.css',
         '@material/list/dist/mdc.list.css',
-        '@rmwc/icon/icon.css'
+        '@srmwc/icon/icon.css'
       ]}
       docsLink="https://material.io/develop/web/components/menus/"
       examples={examples}
@@ -188,7 +188,7 @@ export default function() {
           // Render the RMWC Portal
           // You only have to do this once
           import React from 'react';
-          import { Portal } from '@rmwc/base';
+          import { Portal } from '@srmwc/base';
 
           export default function App() {
             return (

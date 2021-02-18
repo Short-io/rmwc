@@ -12,7 +12,7 @@ A note on using TypeScript and Flow Typed with this strategy. Flow tends to be e
 
 ```jsx
 import { Link } from 'react-router-dom';
-import { Button } from '@rmwc/button';
+import { Button } from '@srmwc/button';
 
 {/* Not what you wanted, you expected the Button to be the anchor. */}
 <Link to="/">

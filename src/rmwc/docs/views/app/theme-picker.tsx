@@ -1,20 +1,20 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
-import { TabBar, Tab } from '@rmwc/tabs';
+import { TabBar, Tab } from '@srmwc/tabs';
 
 import {
   ListItem,
   ListGroupSubheader,
   ListItemGraphic,
   ListItemMeta
-} from '@rmwc/list';
+} from '@srmwc/list';
 
-import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
+import { MenuSurface, MenuSurfaceAnchor } from '@srmwc/menu';
 
-import { Button } from '@rmwc/button';
-import { toCamel, toDashCase } from '@rmwc/base';
-import { getAutoColorsForTheme } from '@rmwc/theme/utils';
-import { TopAppBarActionItem } from '@rmwc/top-app-bar';
+import { Button } from '@srmwc/button';
+import { toCamel, toDashCase } from '@srmwc/base';
+import { getAutoColorsForTheme } from '@srmwc/theme/utils';
+import { TopAppBarActionItem } from '@srmwc/top-app-bar';
 
 const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',

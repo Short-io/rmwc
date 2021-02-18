@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { Select } from '@rmwc/select';
-import { Switch } from '@rmwc/switch';
-import { Checkbox } from '@rmwc/checkbox';
+import { Select } from '@srmwc/select';
+import { Switch } from '@srmwc/switch';
+import { Checkbox } from '@srmwc/checkbox';
 import {
   DataTable,
   DataTableBody,

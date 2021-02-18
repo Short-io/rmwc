@@ -1,8 +1,8 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { MDCSelectIconFoundation } from '@material/select';
-import { Icon, IconProps } from '@rmwc/icon';
-import { useClassNames } from '@rmwc/base';
+import { Icon, IconProps } from '@srmwc/icon';
+import { useClassNames } from '@srmwc/base';
 import { useSelectIconFoundation } from './foundation';
 
 export interface SelectIconApi {

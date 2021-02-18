@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { SnackbarProps } from '.';
 import { MDCSnackbarFoundation, util } from '@material/snackbar';
-import { closest, triggerWindowResize } from '@rmwc/base';
-import { useFoundation } from '@rmwc/base';
+import { closest, triggerWindowResize } from '@srmwc/base';
+import { useFoundation } from '@srmwc/base';
 
 /** Monkey patch the foundation to accept dynamic reasons rather than just "action" */
 // @ts-ignore

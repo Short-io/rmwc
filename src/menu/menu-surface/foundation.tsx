@@ -5,7 +5,7 @@ import {
   emptyClientRect,
   FoundationElement,
   raf
-} from '@rmwc/base';
+} from '@srmwc/base';
 import {
   MDCMenuSurfaceFoundation,
   util,

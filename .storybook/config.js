@@ -2,7 +2,7 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import '../src/rmwc/styles';
-import { Portal } from '@rmwc/base';
+import { Portal } from '@srmwc/base';
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);

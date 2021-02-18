@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Chip, ChipSet } from './';
 import { useChipFoundation } from './foundation';
-import { mountHook } from '@rmwc/base/utils/test-utils';
+import { mountHook } from '@srmwc/base/utils/test-utils';
 
 describe('Chip', () => {
   it('renders', () => {

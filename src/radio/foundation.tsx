@@ -1,10 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
 import { RadioProps, RadioHTMLProps } from '.';
-import { useToggleFoundation } from '@rmwc/toggleable';
-import { useFoundation } from '@rmwc/base';
+import { useToggleFoundation } from '@srmwc/toggleable';
+import { useFoundation } from '@srmwc/base';
 import { MDCRadioFoundation } from '@material/radio';
 
 export const useRadioFoundation = (props: RadioProps & RadioHTMLProps) => {

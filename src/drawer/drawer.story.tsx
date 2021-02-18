@@ -11,7 +11,7 @@ import {
   DrawerSubtitle
 } from './';
 import { List, ListItem, ListItemGraphic } from '../list';
-import { useKnob } from '@rmwc/base/utils/use-knob';
+import { useKnob } from '@srmwc/base/utils/use-knob';
 
 const menuItems = [
   { displayName: 'Home', icon: 'home' },

@@ -23,7 +23,7 @@ export default function() {
     <Docs
       title="Grid Lists"
       lead="Grid lists are an alternative to standard list views."
-      module="@rmwc/grid-list"
+      module="@srmwc/grid-list"
       styles={['@material/grid-list/dist/mdc.grid-list.css']}
       docsLink="https://material.io/components/web/catalog/grid-lists/"
       examples={examples}

@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useEffect } from 'react';
 import { RippleProps } from './';
-import { useFoundation, emptyClientRect } from '@rmwc/base';
-import { matches } from '@rmwc/base';
+import { useFoundation, emptyClientRect } from '@srmwc/base';
+import { matches } from '@srmwc/base';
 import { EventType, SpecificEventListener } from '@material/base/types';
 
 import { MDCRippleFoundation, util } from '@material/ripple';

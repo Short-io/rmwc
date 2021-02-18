@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
 import { useLineRippleFoundation } from './foundation';
-import { createComponent, Tag } from '@rmwc/base';
+import { createComponent, Tag } from '@srmwc/base';
 
 export interface LineRippleProps {
   active?: boolean;

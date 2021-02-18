@@ -1,4 +1,4 @@
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@srmwc/base';
 
 import { FloatingLabelProps, FloatingLabelApi } from '.';
 import {

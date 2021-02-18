@@ -11,7 +11,7 @@ export default function() {
     <Docs
       title="Sliders"
       lead="Sliders let users select from a range of values by moving the slider thumb."
-      module="@rmwc/slider"
+      module="@srmwc/slider"
       styles={['@material/slider/dist/mdc.slider.css']}
       docsLink="https://material.io/develop/web/components/input-controls/sliders/"
       examples={examples}

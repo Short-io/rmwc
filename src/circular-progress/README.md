@@ -2,12 +2,12 @@
 
 Circular progress indicators display progress by animating an indicator along an invisible circular track in a clockwise direction. They can be applied directly to a surface, such as a button or card.
 
-- Module **@rmwc/circular-progress**
+- Module **@srmwc/circular-progress**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/circular-progress/styles';
+    - import '@srmwc/circular-progress/styles';
   - Or include stylesheets
-    - **'@rmwc/circular-progress/circular-progress.css'**
+    - **'@srmwc/circular-progress/circular-progress.css'**
 
 
 ## Basic Usage

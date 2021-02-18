@@ -11,7 +11,7 @@ export default function() {
     <Docs
       title="Checkboxes"
       lead="Checkboxes allow the user to select multiple options from a set."
-      module="@rmwc/checkbox"
+      module="@srmwc/checkbox"
       styles={[
         '@material/checkbox/dist/mdc.checkbox.css',
         '@material/form-field/dist/mdc.form-field.css',

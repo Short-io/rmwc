@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
-import { useProviderContext } from '@rmwc/provider';
-import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { useProviderContext } from '@srmwc/provider';
+import { Tag, useClassNames, createComponent } from '@srmwc/base';
 
 export type TypographyT =
   | 'headline1'

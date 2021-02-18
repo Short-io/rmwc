@@ -1,13 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import React from 'react';
-import { Icon, IconProps } from '@rmwc/icon';
+import { Icon, IconProps } from '@srmwc/icon';
 import {
   useClassNames,
   Tag,
   createComponent,
   createMemoComponent
-} from '@rmwc/base';
+} from '@srmwc/base';
 
 /** Grid List Component */
 export interface GridListProps {

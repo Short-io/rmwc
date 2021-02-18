@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@srmwc/types';
 import { SpecificEventListener } from '@material/base/types';
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import classNames from 'classnames';

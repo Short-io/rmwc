@@ -15,8 +15,8 @@ export default function() {
     <Docs
       title="Circular Progress"
       lead="Circular progress indicators display progress by animating an indicator along an invisible circular track in a clockwise direction. They can be applied directly to a surface, such as a button or card."
-      module="@rmwc/circular-progress"
-      styles={['@rmwc/circular-progress/circular-progress.css']}
+      module="@srmwc/circular-progress"
+      styles={['@srmwc/circular-progress/circular-progress.css']}
       examples={examples}
       addon
     >

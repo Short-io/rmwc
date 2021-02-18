@@ -2,10 +2,10 @@
 
 Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks.
 
-- Module **@rmwc/dialog**
+- Module **@srmwc/dialog**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/dialog/styles';
+    - import '@srmwc/dialog/styles';
   - Or include stylesheets
     - **'@material/dialog/dist/mdc.dialog.css'**
     - **'@material/button/dist/mdc.button.css'**
@@ -82,7 +82,7 @@ Setup is nice and easy, create a queue object you can pass around in your code b
 
 // Create a file that exports your queue
 // myQueue.js
-import { createDialogQueue } from '@rmwc/dialog';
+import { createDialogQueue } from '@srmwc/dialog';
 
 export const queue = createDialogQueue()
 ```
@@ -194,7 +194,7 @@ You can specify any element or selector you want, but the simplest method is to 
   // Render the RMWC Portal
   // You only have to do this once
   import React from 'react';
-  import { Portal } from '@rmwc/base';
+  import { Portal } from '@srmwc/base';
 
   export default function App() {
     return (

@@ -1,25 +1,25 @@
 import React, { useState, useRef } from 'react';
 import { menuContent, MenuItemT } from '../../common/menu-content';
-import { Menu, MenuItems, MenuSurfaceAnchor } from '@rmwc/menu';
+import { Menu, MenuItems, MenuSurfaceAnchor } from '@srmwc/menu';
 
-import { SimpleListItem } from '@rmwc/list';
-import { TextField } from '@rmwc/textfield';
+import { SimpleListItem } from '@srmwc/list';
+import { TextField } from '@srmwc/textfield';
 import { Link } from 'react-router-dom';
-import { CircularProgress } from '@rmwc/circular-progress';
+import { CircularProgress } from '@srmwc/circular-progress';
 
 import { history } from '../../common/history';
 import styles from './site-search.module.css';
-import { IconPropT } from '@rmwc/types';
+import { IconPropT } from '@srmwc/types';
 
 type SiteSearchItemT = {
   cacheId: string; //"-uBq3tnNfuMJ"
   displayLink: string; //"rmwc.io"
   formattedUrl: string; //"https://rmwc.io/?p=installation"
-  htmlSnippet: string; //"npm i @rmwc/<b>button</b> --save or yarn add @rmwc/<b>button</b>; Include the individual <br>↵components stylesheets (listed on their docs page) in your project via your <br>↵method&nbsp;..."
+  htmlSnippet: string; //"npm i @srmwc/<b>button</b> --save or yarn add @srmwc/<b>button</b>; Include the individual <br>↵components stylesheets (listed on their docs page) in your project via your <br>↵method&nbsp;..."
   htmlTitle: string; //"RMWC | React Material Web Components | Installation"
   kind: string; //"customsearch#result"
   link: string; //"https://rmwc.io/?p=installation"
-  snippet: string; //"npm i @rmwc/button --save or yarn add @rmwc/button; Include the individual ↵components stylesheets (listed on their docs page) in your project via your ↵method ..."
+  snippet: string; //"npm i @srmwc/button --save or yarn add @srmwc/button; Include the individual ↵components stylesheets (listed on their docs page) in your project via your ↵method ..."
   title: string; //"RMWC | React Material Web Components | Installation"
 };
 

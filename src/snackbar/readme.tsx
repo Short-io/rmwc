@@ -10,14 +10,14 @@ import {
   createSnackbarQueue,
   SnackbarQueue
 } from './';
-import { Button } from '@rmwc/button';
+import { Button } from '@srmwc/button';
 
 export default function() {
   return (
     <Docs
       title="Snackbars"
       lead="Snackbars provide brief feedback about an operation through a message at the bottom of the screen."
-      module="@rmwc/snackbar"
+      module="@srmwc/snackbar"
       styles={[
         '@material/snackbar/dist/mdc.snackbar.css',
         '@material/button/dist/mdc.button.css',
@@ -107,7 +107,7 @@ export default function() {
         {/* jsx */ `
         // Create a file that exports your queue
         // myQueue.js
-        import { createSnackbarQueue } from '@rmwc/snackbar';
+        import { createSnackbarQueue } from '@srmwc/snackbar';
 
         export const queue = createSnackbarQueue();
       `}

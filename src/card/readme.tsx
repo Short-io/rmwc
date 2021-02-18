@@ -24,7 +24,7 @@ export default function() {
     <Docs
       title="Cards"
       lead="Cards contain content and actions about a single subject."
-      module="@rmwc/card"
+      module="@srmwc/card"
       styles={[
         '@material/card/dist/mdc.card.css',
         '@material/button/dist/mdc.button.css',

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { NotchedOutlineProps } from '.';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@srmwc/base';
 import { MDCNotchedOutlineFoundation } from '@material/notched-outline';
 
 export const useNotchedOutlineFoundation = (
