@@ -36,7 +36,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/drawer": "^5.1.0",
+    "@material/drawer": "^10.0.0",
     "@srmwc/base": "^6.1.4",
     "@srmwc/types": "^6.0.5"
   },

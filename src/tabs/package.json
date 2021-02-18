@@ -36,7 +36,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/tab": "^5.1.0",
+    "@material/tab": "^10.0.0",
     "@material/tab-bar": "^5.1.0",
     "@material/tab-indicator": "^5.1.0",
     "@material/tab-scroller": "^5.1.0",

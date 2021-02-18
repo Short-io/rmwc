@@ -122,6 +122,7 @@ export const TextField: RMWC.ComponentType<
       'mdc-text-field--textarea': textarea,
       'mdc-text-field--fullwidth': fullwidth,
       'mdc-text-field--outlined': outlined,
+      'mdc-text-field--filled': !outlined,
       'mdc-text-field--invalid': invalid,
       'mdc-text-field--disabled': disabled,
       'mdc-text-field--with-leading-icon': !!icon,

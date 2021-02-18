@@ -36,7 +36,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/menu": "^5.1.0",
+    "@material/menu": "^10.0.0",
     "@material/menu-surface": "^5.1.0",
     "@srmwc/base": "^6.1.4",
     "@srmwc/list": "^6.1.4",
