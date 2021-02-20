@@ -54,16 +54,10 @@ export const useSelectFoundation = (
     props,
     elements: { rootEl: true, selectedTextEl: true },
     foundation: ({ rootEl, selectedTextEl, getProps, emit }) => {
-      const isNative = () => !getProps().enhanced;
 
       const getSelectAdapterMethods = (): Partial<MDCSelectAdapter> => {
         const items = (): HTMLElement[] =>
-          (isNative()
-            ? Array.apply<null, any, HTMLOptionElement[]>(
-                null,
-                nativeControl.current?.options
-              )
-            : menu.current?.items()) || [];
+          menu.current?.items() || [];
 
         const getValue = (el: Element) => {
           return (
@@ -73,10 +67,6 @@ export const useSelectFoundation = (
 
         return {
           getSelectedMenuItem: () => {
-            if (isNative()) {
-              return nativeControl.current?.selectedOptions[0] || null;
-            }
-
             if (selectedIndex.current === -1) {
               return (
                 menu.current
@@ -107,15 +97,16 @@ export const useSelectFoundation = (
             if (attr === 'tabindex') {
               // Fixes bug 595 https://github.com/jamesmfriedman/rmwc/issues/595.
               // Native selects don't need tabIndexes on the root element
-              if (isNative()) return;
               attr = 'tabIndex';
             }
             selectedTextEl.setProp(attr, value);
           },
           openMenu: () => {
+            console.log('open menu');
             setMenuOpen(true);
           },
           closeMenu: () => {
+            console.log('close menu');
             setMenuOpen(false);
           },
           getAnchorElement: () => anchor.current,
@@ -225,7 +216,7 @@ export const useSelectFoundation = (
 
       // This foundation requires a bit of monkey patching
       // in order to get placeholders working correctly
-      const adapter = (f as any).adapter_ as MDCSelectAdapter;
+      const adapter = (f as any).adapter as MDCSelectAdapter;
 
       // @ts-ignore private override
       f.updateLabel_ = () => {
@@ -251,6 +242,7 @@ export const useSelectFoundation = (
       // This is only set one time in the constructor which
       // is before React even has a chance to render...
       // Make it a dynamic getter
+      // TODO: remove for v10
       Object.defineProperty(f, 'menuItemValues_', {
         get: () => {
           return adapter.getMenuItemValues();
@@ -302,6 +294,7 @@ export const useSelectFoundation = (
       // We can't use Reacts menuOpen variable because it is
       // ahead of the actual DOM animation...
       // Not ideal, but no other way currently
+      console.log('handleClick');
       if (rootEl.ref?.querySelector('.mdc-menu-surface--open')) {
         return;
       }
@@ -336,6 +329,7 @@ export const useSelectFoundation = (
   );
 
   const handleMenuOpened = useCallback(() => {
+    console.log('menu opened');
     foundation.handleMenuOpened();
   }, [foundation]);
 
@@ -369,7 +363,6 @@ export const useSelectFoundation = (
     silenceChange.current = true;
 
     if (value !== undefined && value !== foundationValue) {
-      // @ts-ignore unsafe private variable access
       const index = foundation.menuItemValues_.indexOf(value);
       selectedIndex.current = index;
       foundation.setValue(value || '');

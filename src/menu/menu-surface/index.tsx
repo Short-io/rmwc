@@ -70,6 +70,7 @@ export const MenuSurface = createComponent<MenuSurfaceProps>(
     const { rootEl } = useMenuSurfaceFoundation(props);
 
     const className = useClassNames(props, [
+      'mdc-menu',
       'mdc-menu-surface',
       {
         'mdc-menu-surface--fixed': fixed

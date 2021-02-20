@@ -48,7 +48,7 @@ export interface SelectProps {
   /** Makes the Select required.  */
   required?: boolean;
   /** Renders a non native / enhanced dropdown */
-  enhanced?: boolean | MenuProps;
+  enhanced?: MenuProps;
   /** Props for the root element. By default, additional props spread to the native select element.  */
   rootProps?: Object;
   /** A reference to the native select element. Not applicable when `enhanced` is true. */
@@ -96,89 +96,33 @@ const createSelectOptions = (options: any): FormattedOption[] => {
 };
 
 const SelectDropdownArrow = React.memo(function SelectDropdownArrow() {
-  return <i className="mdc-select__dropdown-icon" />;
+  return <span className="mdc-select__dropdown-icon">
+    <svg
+        className="mdc-select__dropdown-icon-graphic"
+        viewBox="7 10 10 5" focusable="false">
+      <polygon
+          className="mdc-select__dropdown-icon-inactive"
+          stroke="none"
+          fill-rule="evenodd"
+          points="7 10 12 15 17 10">
+      </polygon>
+      <polygon
+          className="mdc-select__dropdown-icon-active"
+          stroke="none"
+          fill-rule="evenodd"
+          points="7 15 12 10 17 15">
+      </polygon>
+    </svg>
+  </span>;
 });
-
-function NativeMenu(
-  props: {
-    selectOptions: any;
-    placeholder?: string;
-    children: React.ReactNode;
-    elementRef: React.Ref<HTMLSelectElement>;
-    value: any;
-    defaultValue?: any;
-  } & React.HTMLProps<HTMLSelectElement>
-) {
-  const {
-    selectOptions,
-    placeholder = '',
-    children,
-    elementRef,
-    ...rest
-  } = props;
-
-  const renderOption = ({
-    label,
-    option,
-    index
-  }: {
-    label: React.ReactNode;
-    option: FormattedOption;
-    index: number;
-  }) => {
-    return (
-      <option key={index} {...(option as any)} value={option.value}>
-        {label}
-      </option>
-    );
-  };
-
-  const isEmptyValue = !props.value && !props.defaultValue;
-
-  return (
-    <select
-      tabIndex={0}
-      {...rest}
-      ref={elementRef}
-      className={`rmwc-select__native-control ${rest.className || ''}`}
-    >
-      {(props.placeholder !== undefined || isEmptyValue) && (
-        <option value="" disabled={isEmptyValue}>
-          {placeholder}
-        </option>
-      )}
-      {!!selectOptions &&
-        selectOptions.map(
-          ({ label, options, ...option }: FormattedOption, index: number) => {
-            if (options) {
-              return (
-                <optgroup label={label as string} key={index}>
-                  {options.map(({ label, ...option }, index) =>
-                    renderOption({
-                      label,
-                      option: option as FormattedOption,
-                      index
-                    })
-                  )}
-                </optgroup>
-              );
-            }
-
-            return renderOption({
-              label,
-              option: option as FormattedOption,
-              index
-            });
-          }
-        )}
-      {children}
-    </select>
-  );
-}
 
 const SelectedTextEl = withRipple({ surface: false })(function (props: any) {
   return <Tag {...props} />;
 });
+
+const SelectedTextContainerEl = function SelectedTextContainerEl(props: any) {
+  return <Tag {...props} />;
+}
 
 interface EnhancedMenuProps extends MenuProps {
   selectOptions: FormattedOption[];
@@ -310,7 +254,6 @@ export const Select: RMWC.ComponentType<
     lineRippleCenter,
     floatLabel,
     setFloatingLabel,
-    setNativeControl,
     setLeadingIcon,
     selectedIndex,
     setMenu,
@@ -329,6 +272,7 @@ export const Select: RMWC.ComponentType<
     'mdc-select',
     {
       'mdc-select--outlined': !!outlined,
+      'mdc-select--filled': !outlined,
       'mdc-select--required': !!props.required,
       'mdc-select--invalid': !!invalid,
       'mdc-select--with-leading-icon': !!icon,
@@ -373,69 +317,57 @@ export const Select: RMWC.ComponentType<
         ref={ref}
         className={className}
       >
-        <div className="mdc-select__anchor">
+        <div className="mdc-select__anchor"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          onClick={handleClick}
+          onKeyDown={handleKeydown}
+        >
+          <span className="mdc-select__ripple"></span>
+          {outlined? null : renderedLabel}
           {!!icon && <SelectIcon apiRef={setLeadingIcon} icon={icon} />}
+          <SelectedTextContainerEl className="mdc-select__selected-text-container">
+            <SelectedTextEl
+              className="mdc-select__selected-text"
+              role="button"
+              aria-expanded={ menuOpen ? "true" : "false"}
+              aria-haspopup="listbox"
+              element={selectedTextEl}
+              /** In the case of native selects, we don't want this to be be focusable */
+              tabIndex={undefined}
+            >
+              {selectedTextContent || <>&nbsp;</>}
+            </SelectedTextEl>
+          </SelectedTextContainerEl>
           <SelectDropdownArrow />
-          <SelectedTextEl
-            className="mdc-select__selected-text"
-            role="button"
-            aria-haspopup="listbox"
-            element={selectedTextEl}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onClick={handleClick}
-            onKeyDown={handleKeydown}
-            /** In the case of native selects, we don't want this to be be focusable */
-            tabIndex={enhanced ? undefined : -1}
-          >
-            {selectedTextContent || <>&nbsp;</>}
-          </SelectedTextEl>
           {outlined ? (
             <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
           ) : (
             <>
-              {renderedLabel}
               <LineRipple active={lineRippleActive} center={lineRippleCenter} />
             </>
           )}
-          {!enhanced && (
-            <NativeMenu
-              {...rest}
-              value={value}
-              children={children}
-              defaultValue={defaultValue}
-              placeholder={placeholder}
-              selectOptions={selectOptions}
-              elementRef={setNativeControl}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              onChange={(evt: React.ChangeEvent<HTMLSelectElement>) =>
-                handleMenuSelected(evt.currentTarget.selectedIndex)
-              }
-            />
-          )}
+          
         </div>
 
-        {enhanced && (
-          <EnhancedMenu
-            {...rest}
-            {...enhancedMenuProps}
-            anchorCorner="bottomStart"
-            defaultValue={defaultValue}
-            placeholder={placeholder}
-            open={menuOpen}
-            onClose={handleMenuClosed}
-            onOpen={handleMenuOpened}
-            onSelect={(evt: MenuOnSelectEventT) => {
-              handleMenuSelected(evt.detail.index);
-            }}
-            selectOptions={selectOptions}
-            value={value}
-            selectedIndex={selectedIndex}
-            menuApiRef={setMenu}
-            children={children}
-          />
-        )}
+        <EnhancedMenu
+          {...rest}
+          {...enhancedMenuProps}
+          anchorCorner="bottomStart"
+          defaultValue={defaultValue}
+          placeholder={placeholder}
+          open={menuOpen}
+          onClose={handleMenuClosed}
+          onOpen={handleMenuOpened}
+          onSelect={(evt: MenuOnSelectEventT) => {
+            handleMenuSelected(evt.detail.index);
+          }}
+          selectOptions={selectOptions}
+          value={value}
+          selectedIndex={selectedIndex}
+          menuApiRef={setMenu}
+          children={children}
+        />
       </Tag>
       {renderHelpText()}
     </>
