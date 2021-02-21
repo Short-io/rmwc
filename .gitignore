@@ -16,6 +16,7 @@ node_modules
 **/styles.js
 **/styles.d.ts
 react-versions
+*~
 
 # misc
 .DS_Store
