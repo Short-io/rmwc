@@ -1,136 +1,105 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useLayoutEffect } from 'react';
 import { SliderProps } from '.';
 import { useFoundation, emptyClientRect } from '@srmwc/base';
 
 import { EventType, SpecificEventListener } from '@material/base/types';
 import { debounce } from '@srmwc/base';
 
-import { MDCSliderFoundation } from '@material/slider';
+import { MDCSliderFoundation, Thumb } from '@material/slider';
+
+const defaultValues = {
+  "min": 0,
+  "max": 100,
+};
 
 export const useSliderFoundation = (
   props: SliderProps & React.HTMLProps<any>
 ) => {
-  const trackRef = useRef<HTMLElement>();
-  const setTrackRef = (element: HTMLElement) => (trackRef.current = element);
-
-  const trackmarkerContainerRef = useRef<HTMLElement>();
-  const setTrackMarkerContainerRef = (element: HTMLElement) =>
-    (trackmarkerContainerRef.current = element);
-
   const { foundation, ...elements } = useFoundation({
     props,
     elements: {
       rootEl: true,
-      thumbContainerEl: true,
-      sliderPinEl: true
+      inputEl: true,
+      thumbEl: true,
+      sliderPinEl: true,
+      trackActiveEl: true,
     },
-    foundation: ({ rootEl, thumbContainerEl, sliderPinEl, emit }) => {
+    foundation: ({ rootEl, thumbEl, trackActiveEl, inputEl, emit }) => {
       return new MDCSliderFoundation({
         hasClass: (className: string) => rootEl.hasClass(className),
         addClass: (className: string) => rootEl.addClass(className),
         removeClass: (className: string) => rootEl.removeClass(className),
+        getInputValue: () => props.value! as string,
+        setInputValue: (...args) => console.log('not implemented', args),
+        getInputAttribute: (name: string) => {
+          return inputEl.ref?.getAttribute(name as any) ?? defaultValues[name]
+        },
+        setInputAttribute: (name: string, value: string) =>
+          inputEl.ref?.setAttribute(name as any, value),
+        removeInputAttribute: (name: string) =>
+          inputEl.ref?.removeAttribute(name as any),
         getAttribute: (name: string) =>
           rootEl.getProp(name as any) as string | null,
-        setAttribute: debounce(
-          (name: string, value: any) => rootEl.setProp(name as any, value),
-          300
-        ),
-        removeAttribute: (name: string) => rootEl.removeProp(name as any),
-        computeBoundingRect: () =>
+        getBoundingClientRect: () =>
           rootEl.ref ? rootEl.ref.getBoundingClientRect() : emptyClientRect,
-        getTabIndex: () => (rootEl.ref ? rootEl.ref.tabIndex : 0),
-        registerInteractionHandler: <K extends EventType>(
+        addThumbClass: (className: string) => thumbEl.addClass(className),
+        removeThumbClass: (className: string) => thumbEl.removeClass(className),
+        registerThumbEventHandler: <K extends EventType>(
+          thumb: Thumb,
           evtType: K,
           handler: SpecificEventListener<K>
         ): void => {
-          rootEl.addEventListener(evtType, handler);
+          thumbEl.addEventListener(evtType, handler);
         },
-        deregisterInteractionHandler: <K extends EventType>(
+
+        registerInputEventHandler<K extends EventType>(
+          thumb: Thumb, evtType: K, handler: SpecificEventListener<K>): void {
+          inputEl.addEventListener(evtType, handler);
+        },
+
+        deregisterInputEventHandler<K extends EventType>(
+            thumb: Thumb, evtType: K, handler: SpecificEventListener<K>): void {
+          inputEl.removeEventListener(evtType, handler);
+        },
+
+        deregisterThumbEventHandler: <K extends EventType>(
+          thumb: Thumb,
           evtType: K,
           handler: SpecificEventListener<K>
         ): void => {
-          rootEl.removeEventListener(evtType, handler);
+          thumbEl.removeEventListener(evtType, handler);
         },
-        registerThumbContainerInteractionHandler: <K extends EventType>(
-          evtType: K,
-          handler: SpecificEventListener<K>
-        ): void => {
-          thumbContainerEl.addEventListener(evtType, handler);
-        },
-        deregisterThumbContainerInteractionHandler: <K extends EventType>(
-          evtType: K,
-          handler: SpecificEventListener<K>
-        ): void => {
-          thumbContainerEl.removeEventListener(evtType, handler);
-        },
-        registerBodyInteractionHandler: <K extends EventType>(
+        registerBodyEventHandler: <K extends EventType>(
           evtType: K,
           handler: SpecificEventListener<K>
         ): void => {
           document.body && document.body.addEventListener(evtType, handler);
         },
-        deregisterBodyInteractionHandler: <K extends EventType>(
+        deregisterBodyEventHandler: <K extends EventType>(
           evtType: K,
           handler: SpecificEventListener<K>
         ): void => {
           document.body && document.body.removeEventListener(evtType, handler);
         },
-        registerResizeHandler: (
-          handler: SpecificEventListener<'resize'>
-        ): void => {
-          window.addEventListener('resize', handler);
+        setThumbStyleProperty: (propertyName: string, value: any, thumb: Thumb) => {
+          console.log(propertyName, value);
+          thumbEl.ref?.style.setProperty(propertyName, value);
         },
-        deregisterResizeHandler: (
-          handler: SpecificEventListener<'resize'>
-        ): void => {
-          window.removeEventListener('resize', handler);
+        removeThumbStyleProperty: (propertyName: string, thumb: Thumb) => {
+          thumbEl.setStyle(propertyName, '');
         },
-        notifyInput: () => {
-          emit('onInput', { value: foundation.getValue() });
+        setTrackActiveStyleProperty: (propertyName: string, value: any) => {
+          console.log('track active style', propertyName, value)
+          trackActiveEl.ref?.style.setProperty(propertyName, value);
         },
-        notifyChange: () => {
-          emit('onChange', { value: foundation.getValue() });
-        },
-        setThumbContainerStyleProperty: (propertyName: string, value: any) => {
-          thumbContainerEl.setStyle(propertyName, value);
-        },
-        setTrackStyleProperty: (propertyName: string, value: any) => {
-          trackRef.current?.style.setProperty(propertyName, value);
-        },
-        setMarkerValue: (value: number) => {
-          sliderPinEl.setProp('value', value);
-        },
-
-        setTrackMarkers: (step: number, max: number, min: number) => {
-          const stepStr = step.toLocaleString();
-          const maxStr = max.toLocaleString();
-          const minStr = min.toLocaleString();
-          // keep calculation in css for better rounding/subpixel behavior
-          const markerAmount = `((${maxStr} - ${minStr}) / ${stepStr})`;
-          const markerWidth = `2px`;
-          const markerBkgdImage = `linear-gradient(to right, currentColor ${markerWidth}, transparent 0)`;
-          const markerBkgdLayout = `0 center / calc((100% - ${markerWidth}) / ${markerAmount}) 100% repeat-x`;
-          const markerBkgdShorthand = `${markerBkgdImage} ${markerBkgdLayout}`;
-          trackmarkerContainerRef.current?.style.setProperty(
-            'background',
-            markerBkgdShorthand
-          );
+        removeTrackActiveStyleProperty: (propertyName: string) => {
+          trackActiveEl.ref?.style.removeProperty(propertyName);
         },
         isRTL: () =>
           !!rootEl.ref && getComputedStyle(rootEl.ref).direction === 'rtl'
       });
     }
   });
-
-  // max
-  useEffect(() => {
-    props.max !== undefined && foundation.setMax(+props.max);
-  }, [props.max, foundation]);
-
-  // min
-  useEffect(() => {
-    props.min !== undefined && foundation.setMin(+props.min);
-  }, [props.min, foundation]);
 
   // value
   useEffect(() => {
@@ -153,63 +122,33 @@ export const useSliderFoundation = (
       );
       value = max;
     }
-
     foundation.setValue(value);
   }, [props.value, foundation]);
 
-  // step
-  useEffect(() => {
-    props.step !== undefined && foundation.setStep(+props.step);
-  }, [props.step, foundation]);
+  useLayoutEffect(() => {
+    foundation.layout();
+  }, [foundation])
 
-  // disabled
-  useEffect(() => {
-    props.disabled !== undefined && foundation.setDisabled(props.disabled);
-  }, [props.disabled, foundation]);
+  const handleInputOnChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    console.log('change event');
+    foundation.handleInputChange(evt as any);
+    props.onChange?.(evt);
+  };
 
-  // discrete
-  useEffect(() => {
-    if (props.discrete !== undefined) {
-      // @ts-ignore unsafe private variable access
-      foundation.isDiscrete_ = props.discrete;
-    }
+  const handleInputOnFocus = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    foundation.handleInputFocus(evt as any);
+  };
 
-    if (props.discrete && foundation.getStep() === 0) {
-      foundation.setStep(1);
-    }
-  }, [props.discrete, foundation]);
+  const handleOnPointerDown = (evt) => {
+    foundation.handlePointerdown(evt);
+  }
+  // elements.rootEl.setProp('onMouseDown', (evt: PointerEvent) => foundation.handlePointerdown(evt));
 
-  // displayMarkers
-  useEffect(() => {
-    // @ts-ignore unsafe private variable access
-    const hasTrackMarker = foundation.hasTrackMarker_;
-    if (
-      props.displayMarkers !== undefined &&
-      props.displayMarkers !== hasTrackMarker
-    ) {
-      // @ts-ignore unsafe private variable access
-      foundation.hasTrackMarker_ = props.displayMarkers;
-      window.requestAnimationFrame(() => foundation.setupTrackMarker());
-    }
-  }, [props.displayMarkers, foundation]);
-
-  // bugfix
-  useEffect(() => {
-    // Fixes an issue where synthetic events were being
-    // accessed in the Foundation and causing an error
-    // @ts-ignore unsafe private access
-    const existinghandleDown_ = foundation.handleDown_.bind(foundation);
-
-    // @ts-ignore unsafe private access
-    foundation.handleDown_ = (evt: React.SyntheticEvent<any>) => {
-      evt.persist();
-      existinghandleDown_(evt);
-    };
-  }, [foundation]);
 
   return {
-    setTrackRef,
-    setTrackMarkerContainerRef,
-    ...elements
+    ...elements,
+    handleInputOnChange,
+    handleInputOnFocus,
+    handleOnPointerDown,
   };
 };
