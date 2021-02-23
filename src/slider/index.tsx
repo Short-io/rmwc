@@ -50,21 +50,19 @@ const SliderTrackMarkerContainer = React.memo(
   })
 );
 
-const SliderValueIndicator = React.memo(function SliderValueIndicator({
-  value
-}) {
+const SliderValueIndicator = function SliderValueIndicator(props: any) {
   return (
     <div className="mdc-slider__value-indicator-container" aria-hidden="true">
       <div className="mdc-slider__value-indicator">
-        <span className="mdc-slider__value-indicator-text">{value}</span>
+        <span className="mdc-slider__value-indicator-text">{props.value}</span>
       </div>
     </div>
   );
-});
+};
 
 const SliderThumb = React.memo(function SliderThumb(props: any) {
   return (
-    <Tag element={props.element} className="mdc-slider__thumb">
+    <Tag {...props} className="mdc-slider__thumb">
       <div className="mdc-slider__thumb-knob"></div>
     </Tag>
   );
@@ -81,16 +79,23 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
       handleInputOnFocus,
       handleInputOnChange,
       handleOnPointerDown,
+      handleMousedownOrTouchstart,
+      handleThumbMouseenter,
+      handleThumbMouseleave,
+      handleInputBlur,
+      handleMove,
+      handleDown,
+      handleUp,
     } = useSliderFoundation(props);
 
     const {
       value,
-      min,
-      max,
+      min = 0,
+      max = 100,
       name,
       discrete,
       displayMarkers,
-      step,
+      step = 1,
       disabled,
       onChange,
       onInput,
@@ -98,7 +103,6 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
       foundationRef,
       ...rest
     } = props;
-    console.log(min);
 
     const className = useClassNames(props, [
       'mdc-slider',
@@ -125,7 +129,18 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
         aria-valuemax={max as any}
         aria-valuenow={value as any}
         aria-label="Select Value"
-        onPointerDown={handleOnPointerDown}
+        // onPointerDown={(evt) => {
+        //   console.log('DOWN!!')
+        //   handleOnPointerDown(evt);
+        //   handleDown(evt)
+        // }}
+        onPointerUp={(evt: any) => {
+          console.log('UPPP!')
+          handleUp()
+        }}
+        onMouseDown={handleMousedownOrTouchstart}
+        onMouseUp={handleUp}
+        onPointerMove={handleMove}
         {...(disabled ? { 'aria-disabled': disabled } : {})}
         {...dataStep}
         {...rest}
@@ -139,15 +154,16 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
           className="mdc-slider__input"
           type="range"
           onChange={(evt) => {
-            onChange(evt);
+            onChange && onChange(evt);
             handleInputOnChange(evt);
           }}
           onFocus={handleInputOnFocus}
+          onBlur={handleInputBlur}
           min={min}
           max={max}
           value={value}
           name={name}
-          step="10"
+          step={step}
           aria-label="Select value"
         />
         <div className="mdc-slider__track">
@@ -156,13 +172,13 @@ export const Slider: RMWC.ComponentType<SliderProps, SliderHTMLProps, 'input'> =
             <Tag element={trackActiveEl} className="mdc-slider__track--active_fill" />
           </Tag>
           {displayMarkers && (
-            <SliderTrackMarkerContainer ref={setTrackMarkerContainerRef} />
+            <SliderTrackMarkerContainer />
           )}
         </div>
         {discrete && (
           <SliderValueIndicator value={sliderPinEl.getProp('value')} />
         )}
-        <SliderThumb element={thumbEl} />
+        <SliderThumb onMouseEnter={handleThumbMouseenter} onMouseLeave={handleThumbMouseleave} element={thumbEl} />
         {children}
       </Tag>
     );

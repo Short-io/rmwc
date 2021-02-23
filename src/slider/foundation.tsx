@@ -3,13 +3,13 @@ import { SliderProps } from '.';
 import { useFoundation, emptyClientRect } from '@srmwc/base';
 
 import { EventType, SpecificEventListener } from '@material/base/types';
-import { debounce } from '@srmwc/base';
 
-import { MDCSliderFoundation, Thumb } from '@material/slider';
+import { cssClasses, MDCSliderFoundation, Thumb } from '@material/slider';
 
-const defaultValues = {
-  "min": 0,
-  "max": 100,
+const defaultValues: Record<string, string> = {
+  "min": "0",
+  "max": "100",
+  "step": "1",
 };
 
 export const useSliderFoundation = (
@@ -51,12 +51,21 @@ export const useSliderFoundation = (
         ): void => {
           thumbEl.addEventListener(evtType, handler);
         },
-
         registerInputEventHandler<K extends EventType>(
           thumb: Thumb, evtType: K, handler: SpecificEventListener<K>): void {
           inputEl.addEventListener(evtType, handler);
         },
-
+        focusInput: (thumb: Thumb) => {
+          inputEl.ref?.focus();
+        },
+        getThumbKnobWidth: (thumb: Thumb) => {
+          return thumbEl.ref?.querySelector<HTMLElement>(`.${cssClasses.THUMB_KNOB}`)!
+          .getBoundingClientRect()
+          .width!;
+        },
+        getThumbBoundingClientRect: () => {
+          return thumbEl.ref?.getBoundingClientRect() || emptyClientRect;
+        },
         deregisterInputEventHandler<K extends EventType>(
             thumb: Thumb, evtType: K, handler: SpecificEventListener<K>): void {
           inputEl.removeEventListener(evtType, handler);
@@ -88,8 +97,10 @@ export const useSliderFoundation = (
         removeThumbStyleProperty: (propertyName: string, thumb: Thumb) => {
           thumbEl.setStyle(propertyName, '');
         },
+        setPointerCapture: (pointerId) => {
+          rootEl.ref?.setPointerCapture(pointerId);
+        },
         setTrackActiveStyleProperty: (propertyName: string, value: any) => {
-          console.log('track active style', propertyName, value)
           trackActiveEl.ref?.style.setProperty(propertyName, value);
         },
         removeTrackActiveStyleProperty: (propertyName: string) => {
@@ -135,20 +146,41 @@ export const useSliderFoundation = (
     props.onChange?.(evt);
   };
 
-  const handleInputOnFocus = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    foundation.handleInputFocus(evt as any);
+  const handleInputOnFocus = () => {
+    foundation.handleInputFocus(Thumb.END);
   };
+  const handleInputBlur = () => foundation.handleInputBlur(Thumb.END);
 
-  const handleOnPointerDown = (evt) => {
-    foundation.handlePointerdown(evt);
+  const handleOnPointerDown = (evt: React.PointerEvent) => {
+    foundation.handlePointerdown(evt.nativeEvent);
   }
-  // elements.rootEl.setProp('onMouseDown', (evt: PointerEvent) => foundation.handlePointerdown(evt));
 
+  const handleUp = () => foundation.handleUp();
+  const handleDown = (evt: React.PointerEvent | React.MouseEvent | React.TouchEvent) => foundation.handleDown(evt.nativeEvent);
+
+  const handleMousedownOrTouchstart = (evt: React.MouseEvent | React.PointerEvent) => {
+    foundation.handleMousedownOrTouchstart(evt.nativeEvent);
+  }
+
+  const handleThumbMouseenter = () => {
+    foundation.handleThumbMouseenter();
+  }
+
+  const handleThumbMouseleave = () => foundation.handleThumbMouseleave();
+
+  const handleMove = (evt: PointerEvent | MouseEvent | TouchEvent)  => foundation.handleMove(evt);
 
   return {
     ...elements,
     handleInputOnChange,
     handleInputOnFocus,
+    handleInputBlur,
     handleOnPointerDown,
+    handleMousedownOrTouchstart,
+    handleThumbMouseenter,
+    handleThumbMouseleave,
+    handleMove,
+    handleUp,
+    handleDown,
   };
 };

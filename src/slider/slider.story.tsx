@@ -9,7 +9,7 @@ function SliderStory() {
   const [value, setValue] = useKnob('number', 'value', 0);
   const [min] = useKnob('number', 'min', 0);
   const [max] = useKnob('number', 'max', 100);
-  const [step] = useKnob('number', 'step', 0);
+  const [step] = useKnob('number', 'step', 1);
   const [discrete] = useKnob('boolean', 'discrete', false);
   const [displayMarkers] = useKnob('boolean', 'displayMarkers', false);
   const [disabled] = useKnob('boolean', 'disabled', false);
